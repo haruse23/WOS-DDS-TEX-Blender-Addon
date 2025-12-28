@@ -17,3 +17,6 @@ To convert from DDS to TEX, just drag and drop a DDS file.
 To convert from TEX to DDS, just drag and drop a *.0.tex0 file or a *.0.tex1 file.
 
 Converted files will be created in same folder as the file you drag and drop.
+
+# 2.0.0
+No need for renaming *.0.tex and *.1.tex files
