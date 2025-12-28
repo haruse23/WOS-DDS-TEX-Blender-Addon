@@ -20,3 +20,6 @@ Converted files will be created in same folder as the file you drag and drop.
 
 # 2.0.0
 No need for renaming *.0.tex and *.1.tex files
+
+# 3.0.0
+Added support for D3DFMT_A8R8G8B8, D3DFMT_X8R8G8B8, D3DFMT_L8
