@@ -2,6 +2,8 @@
 Convert from Spider-Man: Web of Shadows's TEX format to DDS and vice versa.
 
 # Important
+This add-on is designed on Blender 4.5.0
+
 If you have *.0.tex file rename it to *.0.tex0
 
 If you have *.1.tex file rename it to *.0.tex1
