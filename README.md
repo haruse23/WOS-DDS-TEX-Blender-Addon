@@ -2,7 +2,9 @@
 Convert from Spider-Man: Web of Shadows's TEX format to DDS and vice versa.
 
 # Important
-If you have *.0.tex file rename it to *.0.tex0, also if you have *.1.tex file rename it to *.0.tex1
+If you have *.0.tex file rename it to *.0.tex0
+
+If you have *.1.tex file rename it to *.0.tex1
 
 Both files are needed (and they have to be in same folder) for the conversion from TEX to DDS.
 
