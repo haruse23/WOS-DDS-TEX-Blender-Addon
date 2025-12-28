@@ -1,6 +1,8 @@
 # WOS-DDS-TEX-Blender-Addon
 Convert from Spider-Man: Web of Shadows's TEX format to DDS and vice versa.
 
+Supported pixel formats: DXT1, DXT3, DXT5, D3DFMT_A8R8G8B8, D3DFMT_X8R8G8B8, D3DFMT_L8
+
 # Important
 This add-on is designed on Blender 4.5.0
 
