@@ -92,7 +92,7 @@ class DDS:
         self.dwReserved = b'\x00' * 11 * 4
         
         #Pixel Format
-        if TEX.dwFourCC == b'DXT1' or TEX.dwFourCC == b'DXT3' or TEX.dwFourCC == b'DXT5':
+        if TEX.dwFourCC == b'DXT1' or TEX.dwFourCC == b'DXT3' or TEX.dwFourCC == b'DXT5': # Compressed DXT
             self.dwSizePF = 32
             self.dwFlagsPF = 4
             self.dwFourCC = TEX.dwFourCC
@@ -103,7 +103,7 @@ class DDS:
             self.dwABitMask = 4278190080
 
 
-        elif TEX.dwFourCC == b'\x15\x00\x00\x00':
+        elif TEX.dwFourCC == b'\x15\x00\x00\x00': # Uncompressed A8R8G8B8
             self.dwSizePF = 32
             self.dwFlagsPF = 65
             self.dwFourCC = b'\x00' * 4
@@ -114,7 +114,7 @@ class DDS:
             self.dwABitMask = 4278190080
             
         
-        elif TEX.dwFourCC == b'\x16\x00\x00\x00':
+        elif TEX.dwFourCC == b'\x16\x00\x00\x00': # Uncompressed X8R8G8B8
             self.dwSizePF = 32
             self.dwFlagsPF = 64
             self.dwFourCC = b'\x00' * 4
@@ -124,7 +124,7 @@ class DDS:
             self.dwBBitMask = 255
             self.dwABitMask = 0
             
-        elif TEX.dwFourCC == b'\x32\x00\x00\x00':
+        elif TEX.dwFourCC == b'\x32\x00\x00\x00': # Uncompressed L8
             self.dwSizePF = 32
             self.dwFlagsPF = 131072
             self.dwFourCC = b'\x00' * 4

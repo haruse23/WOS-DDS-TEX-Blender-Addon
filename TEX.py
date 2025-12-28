@@ -50,7 +50,20 @@ class TEX:
         self.dwHeight = DDS.dwHeight
         self.dwDepth = DDS.dwDepth
         self.dwMipMapCount = DDS.dwMipMapCount
-        self.dwFourCC = DDS.dwFourCC
+        
+        if DDS.dwFourCC == b'DXT1' or DDS.dwFourCC == b'DXT3' or DDS.dwFourCC == b'DXT5': # Compressed DXT
+            self.dwFourCC = DDS.dwFourCC
+            
+        elif DDS.dwFourCC == b'\x00' * 4:
+            if DDS.dwFlagsPF & 0x40 and DDS.dwFlagsPF & 0x1: # Uncompressed A8R8G8B8
+                self.dwFourCC = b'\x15\x00\x00\x00'
+                
+            elif DDS.dwFlagsPF & 0x40: # Uncompressed X8R8G8B8
+                self.dwFourCC = b'\x16\x00\x00\x00'
+                
+            elif DDS.dwFlagsPF & 0x20000: # Uncompressed L8
+                self.dwFourCC = b'\x32\x00\x00\x00'
+            
         self.dwUnused3 = b'\x00' * 6 * 4
         
         

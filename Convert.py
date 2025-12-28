@@ -10,9 +10,10 @@ def Convert(Filepath, DDS, TEX):
     
     Path = os.path.join(DirectoryPath, Filename)
     
-    PathOutputTEX = os.path.join(DirectoryPath, "0x" + hash[2:].upper() + "." + Filename)
-    PathInputTEX = os.path.join(DirectoryPath, Filename.split(".")[0] + "." + Filename.split(".")[1])
+    
+    
     if Extension == 'dds':
+        PathOutputTEX = os.path.join(DirectoryPath, "0x" + hash[2:].upper() + "." + Filename)
         with open(Path + ".dds", 'rb') as f:
             dds = DDS()
             dds.ReadDDSHeader(f) # Read DDS
@@ -30,7 +31,8 @@ def Convert(Filepath, DDS, TEX):
             tex.WriteTEX1(f) # Write *.1.tex
             
             
-    if Extension == 'tex':
+    elif Extension == 'tex':
+        PathInputTEX = os.path.join(DirectoryPath, Filename.split(".")[0] + "." + Filename.split(".")[1])
         with open(PathInputTEX + ".0.tex", 'rb') as f:
             tex = TEX()
             tex.ReadTEX0(f) # Read TEX0
