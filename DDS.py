@@ -92,21 +92,57 @@ class DDS:
         self.dwReserved = b'\x00' * 11 * 4
         
         #Pixel Format
-        self.dwSizePF = 32
-        self.dwFlagsPF = 4
-        self.dwFourCC = TEX.dwFourCC
-        self.dwRGBBitCount = 32
-        self.dwRBitMask = 16711680
-        self.dwGBitMask = 65280
-        self.dwBBitMask = 255
-        self.dwABitMask = 4278190080
+        if TEX.dwFourCC == b'DXT1' or TEX.dwFourCC == b'DXT3' or TEX.dwFourCC == b'DXT5':
+            self.dwSizePF = 32
+            self.dwFlagsPF = 4
+            self.dwFourCC = TEX.dwFourCC
+            self.dwRGBBitCount = 32
+            self.dwRBitMask = 16711680
+            self.dwGBitMask = 65280
+            self.dwBBitMask = 255
+            self.dwABitMask = 4278190080
+
+
+        elif TEX.dwFourCC == b'\x15\x00\x00\x00':
+            self.dwSizePF = 32
+            self.dwFlagsPF = 65
+            self.dwFourCC = b'\x00' * 4
+            self.dwRGBBitCount = 32
+            self.dwRBitMask = 16711680
+            self.dwGBitMask = 65280
+            self.dwBBitMask = 255
+            self.dwABitMask = 4278190080
+            
         
+        elif TEX.dwFourCC == b'\x16\x00\x00\x00':
+            self.dwSizePF = 32
+            self.dwFlagsPF = 64
+            self.dwFourCC = b'\x00' * 4
+            self.dwRGBBitCount = 32
+            self.dwRBitMask = 16711680
+            self.dwGBitMask = 65280
+            self.dwBBitMask = 255
+            self.dwABitMask = 0
+            
+        elif TEX.dwFourCC == b'\x32\x00\x00\x00':
+            self.dwSizePF = 32
+            self.dwFlagsPF = 131072
+            self.dwFourCC = b'\x00' * 4
+            self.dwRGBBitCount = 8                     
+            self.dwRBitMask = 255
+            self.dwGBitMask = 0
+            self.dwBBitMask = 0
+            self.dwABitMask = 0
+            
+            
+            
+                
         self.dwCaps = 4198408
         self.dwCaps2 = 0
         self.dwCaps3 = 0
         self.dwCaps4 = 0
         self.dwReserved2 = 0
-        
+            
         self.dataDDS = TEX.dataTEX
         
     

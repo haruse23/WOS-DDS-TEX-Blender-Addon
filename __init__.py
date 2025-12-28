@@ -9,7 +9,7 @@ from .Convert import *
 bl_info = {
     "name": "DDS/TEX Converter (WOS)",
     "author": "haru233",
-    "version": (2, 0, 0),
+    "version": (3, 0, 0),
     "blender": (4, 5, 0),
     "location": "Drag-and-Drop",
     "description": "Convert DDS to TEX and TEX to DDS via Drag-and-Drop"
